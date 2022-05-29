@@ -17,6 +17,10 @@ app.use(express.static(photo));
 
 app.use('/api', postRouter);
 
+if (process.env.NODE.ENV =="production"){
+  app.use(express.static("frontend/build"));
+}
+
 app.listen(PORT, () => {
   console.log('Server is running at 3004');
 });
