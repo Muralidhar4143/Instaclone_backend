@@ -50,7 +50,8 @@ router.get('/post', async (req, res) => {
 });
 
 router.get('/image/:id', (req, res) => {
-  const photo = path.join(__dirname, '../uploads/images/', req.params.id);
+  const photo = path.join(__dirname, '/uploads/images/', req.params.id);
+  console.log(__dirname +'/uploads/images/' )
   res.sendFile(photo);
 });
 
